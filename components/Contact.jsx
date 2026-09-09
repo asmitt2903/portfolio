@@ -11,17 +11,32 @@ export default function Contact() {
 
   const handleChange = (e) => setFormData((p) => ({ ...p, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       setStatus({ submitting:false, submitted:false, error:true, message:"Please complete all fields before submitting." });
       return;
     }
     setStatus({ submitting:true, submitted:false, error:false, message:"" });
-    setTimeout(() => {
-      setStatus({ submitting:false, submitted:true, error:false, message:"Thank you! Your message has been sent. I'll get back to you soon." });
-      setFormData({ name:"", email:"", message:"" });
-    }, 1000);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setStatus({ submitting:false, submitted:true, error:false, message: data.message || "Thank you! Your message has been sent. I'll get back to you soon." });
+        setFormData({ name:"", email:"", message:"" });
+      } else {
+        setStatus({ submitting:false, submitted:false, error:true, message: data.error || "Failed to send message." });
+      }
+    } catch (err) {
+      setStatus({ submitting:false, submitted:false, error:true, message: "An unexpected error occurred. Please try again." });
+    }
   };
 
   const contacts = [

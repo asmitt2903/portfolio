@@ -8,3 +8,6 @@ services:
     envVars:
       - key: NODE_VERSION
         value: 20
+      - key: REDIS_URL
+        value: redis://red-dagrc72d0e5s73atdke0:6379
+
