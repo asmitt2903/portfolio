@@ -28,7 +28,7 @@ export default function Hero() {
         <div className="absolute right-0 top-0 h-full w-full sm:w-[60%] lg:w-[55%]">
           <Image
             src="/hero.jpg"
-            alt="Asmit Raj – Full Stack Developer"
+            alt="Asmit Raj – Aspiring Software Engineer"
             fill
             priority
             className="object-cover object-top"
@@ -72,7 +72,7 @@ export default function Hero() {
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#0D0D0D]/90 border border-[#3F1111] backdrop-blur-sm">
                 <Code2 className="w-4 h-4 text-red-500" />
                 <span className="text-[#F5F5F5] font-semibold text-sm sm:text-base tracking-wide">
-                  Full Stack Developer
+                  Aspiring Software Engineer
                 </span>
                 <span className="h-4 w-px bg-[#3F1111]" />
                 <span className="flex items-center gap-1.5 text-xs text-emerald-400 font-mono">

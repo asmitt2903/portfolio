@@ -15,13 +15,14 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Asmit Raj | Full Stack Developer & Computer Science Engineer",
+  title: "Asmit Raj | Aspiring Software Engineer & Computer Science Student",
   description:
-    "Official developer portfolio of Asmit Raj, a Full Stack Developer and B.Tech CSE student at Lovely Professional University. Specializing in Next.js, React, Node.js, Express, MongoDB, and modern web applications.",
+    "Official developer portfolio of Asmit Raj, an Aspiring Software Engineer and B.Tech CSE student at Lovely Professional University. Specializing in Next.js, React, Node.js, Express, MongoDB, and modern web applications.",
   keywords: [
     "Asmit Raj",
-    "Full Stack Developer",
-    "Web Developer Portfolio",
+    "Aspiring Software Engineer",
+    "Software Engineer Portfolio",
+    "Software Engineer",
     "Next.js Developer",
     "React Developer",
     "Node.js Developer",
@@ -31,8 +32,8 @@ export const metadata = {
   authors: [{ name: "Asmit Raj" }],
   creator: "Asmit Raj",
   openGraph: {
-    title: "Asmit Raj | Full Stack Developer",
-    description: "Full Stack Developer building scalable, modern, and user-focused web applications.",
+    title: "Asmit Raj | Aspiring Software Engineer",
+    description: "Aspiring Software Engineer building scalable, modern, and user-focused web applications.",
     type: "website",
     locale: "en_US",
   },

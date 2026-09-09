@@ -1,8 +1,8 @@
 export const personalInfo = {
   name: "Asmit Raj",
-  title: "Full Stack Developer",
+  title: "Aspiring Software Engineer",
   tagline: "Building scalable, modern, and user-focused web applications.",
-  bio: "I'm a Computer Science Engineering student and Full Stack Developer passionate about building modern, scalable and interactive web applications. I enjoy solving programming problems, developing backend systems and creating clean user experiences.",
+  bio: "I'm a Computer Science Engineering student and Aspiring Software Engineer passionate about building modern, scalable and interactive web applications. I enjoy solving programming problems, developing backend systems and creating clean user experiences.",
   availability: "Available for Opportunities",
   education: {
     institution: "Lovely Professional University (LPU)",
@@ -31,7 +31,7 @@ export const personalInfo = {
   ],
   heroSnippet: `const developer = {
   name: "Asmit Raj",
-  role: "Full Stack Developer",
+  role: "Aspiring Software Engineer",
   passion: "Building scalable applications"
 };`,
 };
@@ -158,7 +158,7 @@ export const projectsData = [
 
 export const experienceData = [
   {
-    role: "Full Stack Developer",
+    role: "Aspiring Software Engineer",
     company: "Projects & Freelance",
     period: "2024 – Present",
     type: "Full Stack Development",

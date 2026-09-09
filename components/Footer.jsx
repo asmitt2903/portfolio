@@ -22,7 +22,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-[#8A8A8A] font-medium">
-              Full Stack Developer & Computer Science Engineer
+              Aspiring Software Engineer & Computer Science Student
             </p>
           </div>
 
