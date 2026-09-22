@@ -27,22 +27,22 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <div className="absolute right-0 top-0 h-full w-full sm:w-[60%] lg:w-[55%]">
           <Image
-            src="/hero.jpg"
-            alt="Asmit Raj – Aspiring Software Engineer"
+            src="/spiderman-action.jpg"
+            alt="Asmit Raj – Spider-Man Action Pose"
             fill
             priority
             className="object-cover object-top"
             sizes="(max-width: 768px) 100vw, 55vw"
           />
-          {/* Fade left into bg */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/85 to-transparent" />
+          {/* Fade left into bg — adapts to light/dark via CSS var */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg)] via-[var(--bg)]/85 to-transparent" />
           {/* Fade bottom */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
-          {/* Subtle red rim on right edge */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-transparent to-transparent" />
+          {/* Red web glow rim */}
           <div className="absolute inset-0 bg-gradient-to-l from-red-950/30 to-transparent" />
         </div>
-        {/* Hard dark left panel so text is always crisp */}
-        <div className="absolute inset-y-0 left-0 w-1/2 bg-[#050505]" />
+        {/* Hard left panel so text is always crisp */}
+        <div className="absolute inset-y-0 left-0 w-1/2 bg-[var(--bg)]" />
       </div>
 
       {/* ── Content ── */}

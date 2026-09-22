@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, FileDown, Code2 } from "lucide-react";
+import { Menu, X, FileDown, Code2, Sun, Moon } from "lucide-react";
 import { personalInfo } from "@/data/portfolioData";
+import { useTheme } from "@/lib/ThemeContext";
 
 const navItems = [
   { name: "Home",       href: "#home" },
@@ -18,6 +19,7 @@ export default function Navbar() {
   const [scrolled, setScrolled]       = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection]   = useState("home");
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -84,8 +86,42 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Resume CTA */}
-          <div className="hidden md:flex">
+          {/* Desktop Right: Theme Toggle + Resume CTA */}
+          <div className="hidden md:flex items-center gap-3">
+            {/* Theme Toggle */}
+            <motion.button
+              onClick={toggleTheme}
+              whileTap={{ scale: 0.92 }}
+              whileHover={{ scale: 1.05 }}
+              aria-label="Toggle light/dark mode"
+              className="relative p-2.5 rounded-xl border border-[#3F1111] bg-[#0D0D0D]/80 hover:border-red-600/50 transition-all overflow-hidden"
+              style={{ borderColor: theme === "light" ? "#FECACA" : undefined, background: theme === "light" ? "rgba(255,255,255,0.85)" : undefined }}
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                {theme === "dark" ? (
+                  <motion.span
+                    key="moon"
+                    initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
+                    animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                    exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Moon className="w-4 h-4 text-slate-300" />
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="sun"
+                    initial={{ opacity: 0, rotate: 90, scale: 0.5 }}
+                    animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                    exit={{ opacity: 0, rotate: -90, scale: 0.5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Sun className="w-4 h-4 text-amber-500" />
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </motion.button>
+
             <a
               href={personalInfo.links.resume}
               target="_blank"
@@ -98,13 +134,26 @@ export default function Navbar() {
           </div>
 
           {/* Mobile toggle */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-[#8A8A8A] hover:text-white rounded-lg bg-[#121212] border border-[#3F1111] focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="md:hidden flex items-center gap-2">
+            {/* Mobile Theme Toggle */}
+            <motion.button
+              onClick={toggleTheme}
+              whileTap={{ scale: 0.9 }}
+              aria-label="Toggle light/dark mode"
+              className="p-2 rounded-lg border border-[#3F1111] bg-[#121212] focus:outline-none"
+              style={{ borderColor: theme === "light" ? "#FECACA" : undefined, background: theme === "light" ? "#f8f8f8" : undefined }}
+            >
+              {theme === "dark" ? <Moon className="w-5 h-5 text-slate-300" /> : <Sun className="w-5 h-5 text-amber-500" />}
+            </motion.button>
+            {/* Mobile Hamburger */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 text-[#8A8A8A] hover:text-white rounded-lg bg-[#121212] border border-[#3F1111] focus:outline-none"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 

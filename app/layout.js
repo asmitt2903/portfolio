@@ -1,6 +1,7 @@
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import KeepAlive from "@/components/KeepAlive";
+import { ThemeProvider } from "@/lib/ThemeContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -41,10 +42,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`dark scroll-smooth ${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="bg-[#050505] text-[#F5F5F5] antialiased selection:bg-red-900/40 selection:text-red-200">
-        <KeepAlive />
-        {children}
+    <html lang="en" className={`scroll-smooth ${inter.variable} ${jetbrainsMono.variable}`}>
+      <body className="bg-[#050505] text-[#F5F5F5] antialiased selection:bg-red-900/40 selection:text-red-200 dark:bg-[#050505] dark:text-[#F5F5F5] light:bg-white light:text-gray-900 transition-colors duration-300">
+        <ThemeProvider>
+          <KeepAlive />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

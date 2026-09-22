@@ -14,7 +14,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-[#07090e] text-slate-100 selection:bg-sky-500/30 selection:text-sky-200 overflow-x-hidden">
+    <div className="relative min-h-screen bg-[var(--bg)] text-[var(--foreground)] selection:bg-sky-500/30 selection:text-sky-200 overflow-x-hidden transition-colors duration-300">
       {/* Background Lighting, Particles & Spider-Man Animation */}
       <CursorGlow />
       <ParticleBackground />
