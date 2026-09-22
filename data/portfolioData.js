@@ -25,8 +25,8 @@ export const personalInfo = {
   },
   stats: [
     { label: "Technologies", value: 10, suffix: "+" },
-    { label: "Full Stack Projects", value: 3, suffix: "+" },
-    { label: "Coding Problems", value: 100, suffix: "+" },
+    { label: "Full Stack Projects", value: 10, suffix: "+" },
+    { label: "Coding Problems", value: 400, suffix: "+" },
     { label: "Education", text: "B.Tech CSE" },
   ],
   heroSnippet: `const developer = {
