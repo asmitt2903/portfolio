@@ -141,9 +141,76 @@ html.light .text-gradient {
 }
 .glow-border:hover::after { opacity: 1; }
 
-/* ── Float animation ── */
-@keyframes floatSlow {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50%       { transform: translateY(-10px) rotate(1deg); }
+/* ── Light Mode Color & Contrast Overrides ── */
+html.light {
+  color: #111827;
 }
-.animate-float-slow { animation: floatSlow 8s ease-in-out infinite; }
+
+html.light .text-\[\#F5F5F5\],
+html.light [class*="text-[#F5F5F5]"] {
+  color: #111827 !important;
+}
+
+html.light .text-\[\#8A8A8A\],
+html.light [class*="text-[#8A8A8A]"] {
+  color: #4B5563 !important;
+}
+
+html.light .bg-\[\#0D0D0D\],
+html.light [class*="bg-[#0D0D0D]"] {
+  background-color: #F3F4F6 !important;
+}
+
+html.light .bg-\[\#121212\],
+html.light [class*="bg-[#121212]"] {
+  background-color: #FFFFFF !important;
+}
+
+html.light .bg-\[\#050505\],
+html.light [class*="bg-[#050505]"] {
+  background-color: #F9FAFB !important;
+}
+
+html.light .border-\[\#3F1111\],
+html.light [class*="border-[#3F1111]"] {
+  border-color: #FCA5A5 !important;
+}
+
+html.light .border-\[\#6B1A1A\],
+html.light [class*="border-[#6B1A1A]"] {
+  border-color: #EF4444 !important;
+}
+
+html.light .bg-red-950\/60,
+html.light .bg-red-950\/40,
+html.light .bg-red-950\/30,
+html.light .bg-red-950\/20 {
+  background-color: #FEE2E2 !important;
+}
+
+html.light .text-red-400 {
+  color: #DC2626 !important;
+}
+
+html.light .text-slate-100,
+html.light .text-slate-200,
+html.light .text-slate-300 {
+  color: #1F2937 !important;
+}
+
+html.light .text-slate-400,
+html.light .text-slate-500 {
+  color: #4B5563 !important;
+}
+
+html.light .text-emerald-400 {
+  color: #059669 !important;
+}
+
+html.light .bg-emerald-950\/60 {
+  background-color: #D1FAE5 !important;
+}
+
+html.light .border-emerald-900\/60 {
+  border-color: #34D399 !important;
+}
