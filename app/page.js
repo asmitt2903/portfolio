@@ -1,5 +1,6 @@
 import CursorGlow from "@/components/CursorGlow";
 import ParticleBackground from "@/components/ParticleBackground";
+import SpidermanBackground from "@/components/SpidermanBackground";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -14,9 +15,10 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-[#07090e] text-slate-100 selection:bg-sky-500/30 selection:text-sky-200 overflow-x-hidden">
-      {/* Background Lighting & Particles */}
+      {/* Background Lighting, Particles & Spider-Man Animation */}
       <CursorGlow />
       <ParticleBackground />
+      <SpidermanBackground />
 
       {/* Navigation Bar */}
       <Navbar />

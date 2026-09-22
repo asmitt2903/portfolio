@@ -26,9 +26,15 @@ export default function Hero() {
       {/* ── Portrait fills right side ── */}
       <div className="absolute inset-0 z-0">
         <div className="absolute right-0 top-0 h-full w-full sm:w-[60%] lg:w-[55%]">
+          {/* Animated Spider-Sense Glow over portrait */}
+          <motion.div
+            animate={{ opacity: [0.3, 0.7, 0.3], scale: [1, 1.04, 1] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-10 right-1/4 w-48 h-48 rounded-full bg-red-600/20 blur-2xl z-10 pointer-events-none"
+          />
           <Image
-            src="/hero.jpg"
-            alt="Asmit Raj – Aspiring Software Engineer"
+            src="/spiderman-hero.jpg"
+            alt="Asmit Raj – Spider-Man Software Engineer"
             fill
             priority
             className="object-cover object-top"
@@ -38,8 +44,8 @@ export default function Hero() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/85 to-transparent" />
           {/* Fade bottom */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
-          {/* Subtle red rim on right edge */}
-          <div className="absolute inset-0 bg-gradient-to-l from-red-950/30 to-transparent" />
+          {/* Subtle red/blue superhero rim on right edge */}
+          <div className="absolute inset-0 bg-gradient-to-l from-red-900/40 via-sky-950/20 to-transparent" />
         </div>
         {/* Hard dark left panel so text is always crisp */}
         <div className="absolute inset-y-0 left-0 w-1/2 bg-[#050505]" />
@@ -69,12 +75,12 @@ export default function Hero() {
 
             {/* Role badge */}
             <motion.div variants={item}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#0D0D0D]/90 border border-[#3F1111] backdrop-blur-sm">
-                <Code2 className="w-4 h-4 text-red-500" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#0D0D0D]/90 border border-red-900/50 backdrop-blur-sm shadow-[0_0_15px_rgba(220,38,38,0.2)]">
+                <span className="text-red-500 font-bold text-sm">🕷️</span>
                 <span className="text-[#F5F5F5] font-semibold text-sm sm:text-base tracking-wide">
-                  Aspiring Software Engineer
+                  Spider-Man & Software Engineer
                 </span>
-                <span className="h-4 w-px bg-[#3F1111]" />
+                <span className="h-4 w-px bg-red-900/50" />
                 <span className="flex items-center gap-1.5 text-xs text-emerald-400 font-mono">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
