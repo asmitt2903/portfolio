@@ -2,11 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 
 export default function SpidermanBackground() {
   const canvasRef = useRef(null);
-  const [spiderSenseActive, setSpiderSenseActive] = useState(false);
   const [webBursts, setWebBursts] = useState([]);
   const mouseRef = useRef({ x: -1000, y: -1000 });
 
@@ -229,62 +227,6 @@ export default function SpidermanBackground() {
           </motion.div>
         ))}
       </AnimatePresence>
-
-      {/* ── Web-Swinging Spider-Man Avatar (Featuring User's Face) ── */}
-      <motion.div
-        pointerEvents="auto"
-        initial={{ x: "-10vw", y: "15vh" }}
-        animate={{
-          x: ["-5vw", "85vw", "85vw", "-5vw"],
-          y: ["15vh", "45vh", "15vh", "45vh"],
-          rotate: [-12, 18, -12, 18],
-        }}
-        transition={{
-          duration: 22,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="fixed top-24 left-0 z-10 cursor-pointer group"
-        onClick={() => setSpiderSenseActive((prev) => !prev)}
-      >
-        {/* Web line attached to top of screen */}
-        <div className="absolute bottom-full left-1/2 w-0.5 h-96 bg-gradient-to-t from-slate-200/80 to-transparent -translate-x-1/2 origin-bottom scale-y-150" />
-
-        <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full p-1 bg-gradient-to-tr from-red-600 via-sky-500 to-red-500 shadow-[0_0_25px_rgba(225,29,72,0.6)] group-hover:scale-110 transition-transform duration-300">
-          
-          {/* Animated Spider-Sense Glow lines radiating above head */}
-          <motion.div
-            animate={{
-              scale: spiderSenseActive ? [1, 1.3, 1] : [1, 1.15, 1],
-              opacity: spiderSenseActive ? [0.8, 1, 0.8] : [0.4, 0.8, 0.4],
-            }}
-            transition={{ duration: 0.6, repeat: Infinity }}
-            className="absolute -top-8 left-1/2 -translate-x-1/2 flex gap-1 pointer-events-none z-20"
-          >
-            <svg className="w-16 h-8 text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.9)]" viewBox="0 0 100 50" fill="none" stroke="currentColor" strokeWidth="4">
-              <path d="M10 40 Q 25 10, 30 30 T 45 10" />
-              <path d="M55 10 Q 70 30, 75 10 T 90 40" />
-              <path d="M35 25 Q 50 0, 65 25" stroke="#ef4444" strokeWidth="3" />
-            </svg>
-          </motion.div>
-
-          {/* User Face Spider-Man Image */}
-          <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-red-500/80">
-            <Image
-              src="/spiderman-swing.jpg"
-              alt="Asmit Raj - Spider-Man"
-              fill
-              className="object-cover"
-              sizes="144px"
-            />
-          </div>
-
-          {/* Spider badge overlay */}
-          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-red-950/90 border border-red-500 text-[10px] font-mono font-bold text-slate-100 shadow-md whitespace-nowrap">
-            🕷️ SPIDER-ASMIT
-          </div>
-        </div>
-      </motion.div>
     </div>
   );
 }
