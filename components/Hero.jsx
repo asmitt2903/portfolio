@@ -27,8 +27,8 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <div className="absolute right-0 top-0 h-full w-full sm:w-[60%] lg:w-[55%]">
           <Image
-            src="/spiderman-action.jpg"
-            alt="Asmit Raj – Spider-Man Action Pose"
+            src="/hero.jpg"
+            alt="Asmit Raj – Aspiring Software Engineer"
             fill
             priority
             className="object-cover object-top"
